@@ -1,8 +1,14 @@
 // Medidor de Temperatura/Humidade/Ponto de Orvalho
 /*******************************************************
-Este código usa o sensor DH11 e LCD Keypad Shield Screen para
-criar uma estação de mediçãoo de temperatura, humidade e ponto de
+Este código usa o sensor DH11 e LCD Keypad Shield DF Robot Screen para
+criar uma estao de medicao de temperatura, humidade e ponto de
 orvalho. 
+
+DHT11 Shield Pins no Arduino Uno:
+
+Vcc - +5v
+Data - A1 (pode definir outro pino modificando o "#define DHTPIN A5")
+GND - GND
 
 Licença:
 Livre para uso mas mantenham o nome!
@@ -14,7 +20,7 @@ Anderson Cursino 03/02/2017
 
 #include <DHT.h>
 #include <DHT_U.h>
-#define DHTPIN A5     
+#define DHTPIN A1     
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -28,6 +34,8 @@ int Animacao = 0;
 int x;
 int poor=0;
 
+/* Configuracoes do Keypad: 
+ 
 #define btnDIR    0
 #define btnCIM    1
 #define btnBAI   2
@@ -43,6 +51,7 @@ int adc_key_in = analogRead(0);
  if (adc_key_in < 555)  return btnESQ; 
  if (adc_key_in < 790)  return btnSELECT;   
 }
+*/
 
 void setup () {
  lcd.begin(16,2);
@@ -127,5 +136,4 @@ double pontoOrvalho(double celsius, double humidade)
         double Td = (b * temp) / (a - temp);
         return Td;
 }
-
 

@@ -2,8 +2,6 @@
 
 name: Release
 on:
-  push:
-  pull_request:
   workflow_dispatch:
     inputs:
       niko_hash:
@@ -32,8 +30,8 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send Robin
-      run: echo "Robin Version: ${{ github.event.input.robin_hash }}"
+      run: echo "Robin Version ${{ github.event.inputs.robin_hash }}"
     - name: Send Niko
-      run: echo "Niko Version: ${{ github.event.input.niko_hash }}"
+      run: echo "Niko Version ${{ github.event.inputs.niko_hash }}"
     - name: Send PlanData
-      run: echo "PlanData Version: ${{ github.event.input.plandata_hash }}"
+      run: echo "PlanData Version ${{ github.event.inputs.plandata_hash }}"

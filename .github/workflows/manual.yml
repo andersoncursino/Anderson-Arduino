@@ -32,8 +32,8 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send Robin
-      run: echo "Robin Version: ${{ github.event.robin_hash.name }}"
+      run: echo "Robin Version: ${{ github.event.input.robin_hash }}"
     - name: Send Niko
-      run: echo "Niko Version: ${{ github.event.niko_hash.name }}"
+      run: echo "Niko Version: ${{ github.event.input.niko_hash }}"
     - name: Send PlanData
-      run: echo "PlanData Version: ${{ github.event.plandata_hash.name }}"
+      run: echo "PlanData Version: ${{ github.event.input.plandata_hash }}"

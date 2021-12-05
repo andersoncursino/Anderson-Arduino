@@ -35,5 +35,5 @@ jobs:
       run: echo "Niko Version ${{ github.event.inputs.niko_hash }}"
     - name: Send PlanData
       run: echo "PlanData Version ${{ github.event.inputs.plandata_hash }}"
-    -name: curl google
+    - name: curl google
       run: curl -o vue-v2.6.10.js https://cdn.jsdelivr.net/npm/vue/dist/vue.js
